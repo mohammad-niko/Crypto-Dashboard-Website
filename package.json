@@ -1,0 +1,22 @@
+{
+  "name": "crypto-dashboard-website",
+  "version": "1.0.0",
+  "description": "A responsive and real-time crypto dashboard built with HTML, Sass, and Vanilla JS. Powered by CoinGecko API. Includes coin details, charts, search, favorites, dark mode &amp; more",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass public/src/scss/style.scss public/dist/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammad-niko/Crypto-Dashboard-Website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammad-niko/Crypto-Dashboard-Website/issues"
+  },
+  "homepage": "https://github.com/mohammad-niko/Crypto-Dashboard-Website#readme",
+  "devDependencies": {
+    "sass": "^1.90.0"
+  }
+}
