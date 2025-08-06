@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+footer {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+  gap: 10px;
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include flex-center(center, center);
+    gap: 30px;
+
+    .social-item {
+      color: rgba(181, 183, 187, 255);
+      font-size: 20px;
+      list-style: none;
+      i {
+        color: rgba(181, 183, 187, 255);
+        transition: color 0.3s linear;
+      }
+      &:hover i {
+        color: rgba(56,97,251,255);
+      }
+    }
+  }
+
+  .tenx-para {
+    color: #5dade2;
+    text-align: center;
+    max-width: 90%;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+    transition: all 0.5s linear;
+
+    &:hover {
+      text-shadow: 0 0 40px #5dade2;
+    }
+    .CoinGecko{
+        color: #5dade2;
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+  }
+}

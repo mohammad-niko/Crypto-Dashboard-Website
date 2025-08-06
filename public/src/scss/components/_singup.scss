@@ -1,0 +1,11 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+
+ .signup-form {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      gap: 20px;
+
+    }

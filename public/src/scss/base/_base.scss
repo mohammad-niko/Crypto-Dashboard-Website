@@ -1,0 +1,25 @@
+*{
+    margin: 0px;
+    padding: 0px;
+  box-sizing: border-box;
+}
+
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #ffffff;
+  }
+}
+
+body{
+  position: relative;
+}

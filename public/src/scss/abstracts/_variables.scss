@@ -1,0 +1,29 @@
+
+$light-background: #ffffff;
+$light-text: #333333;
+$light-primary: rgba(56,97,251,255);
+
+$btns-color:#ffffff;
+$btn-hover:rgba(76, 114, 249);
+
+$dark-background: #1a1a1a;
+$dark-text: #ffffff;
+$dark-primary: #5dade2;
+
+
+:root {
+  --background: #{$light-background};
+  --text: #{$light-text};
+  --text-btn:#{$btns-color};
+  --btn-hover:#{$btn-hover};
+  --primary: #{$light-primary};
+}
+
+[data-theme="dark"] {
+  --background: #{$dark-background};
+  --text: #{$dark-text};
+  --primary: #{$dark-primary};
+    --text-btn:#{$btns-color};
+  --btn-hover:#{$btn-hover};
+}
+
