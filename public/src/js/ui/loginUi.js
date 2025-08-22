@@ -171,7 +171,6 @@ export function renderLogin() {
       container.remove();
       const overlay = document.querySelector(".login-overlay");
       overlay.remove();
-         if (!container && !overlay) navigate("");
     } catch (err) {
       errorDiv.textContent = err.message;
       console.error(err);

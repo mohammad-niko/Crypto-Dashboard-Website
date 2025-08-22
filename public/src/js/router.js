@@ -1,7 +1,6 @@
 import { auth, onAuthStateChanged } from "./firebase.js";
 import { renderHomeView } from "./pages/home.js";
-import { renderLoginSingupView } from "./pages/login-singup.js";
-import { logoutBtn, loginBtn } from "./pages/login-singup.js";
+import { renderLoginSingupView ,logoutBtn, loginBtn } from "./pages/login-singup.js";
 
 export let isHome = true;
 export function setIsHomeView(value) {

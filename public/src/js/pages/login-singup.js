@@ -23,8 +23,11 @@ export function loginBtn() {
 }
 
 export function renderLoginSingupView() {
+  console.log("I'm render LoginSingupView");
   const notAg = document.querySelector(".login-overlay");
-  if (notAg) notAg.remove();
+  const notAg2 = document.querySelector(".container-login-sinup");
+
+  if (notAg && notAg2) return;
 
   const overlay = document.createElement("div");
   overlay.classList.add("login-overlay");
