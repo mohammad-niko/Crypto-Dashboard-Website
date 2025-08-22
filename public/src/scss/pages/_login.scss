@@ -87,3 +87,16 @@
   font-size: 1rem;
   font-weight: 500;
 }
+
+
+
+.login-overlay,
+.container-login-sinup {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.login-overlay.fade-out,
+.container-login-sinup.fade-out {
+  opacity: 0;
+}

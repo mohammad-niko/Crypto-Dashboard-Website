@@ -131,6 +131,17 @@ body {
   font-weight: 500;
 }
 
+.login-overlay,
+.container-login-sinup {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.login-overlay.fade-out,
+.container-login-sinup.fade-out {
+  opacity: 0;
+}
+
 .signup-form {
   display: flex;
   justify-content: space-around;
@@ -194,18 +205,6 @@ header .navbar .part-two .part-two-che {
 header .navbar .part-two .part-two-che .watchlist-icon {
   color: gray;
 }
-header .navbar .part-two .login-btn {
-  width: 60px;
-  height: 32px;
-  text-align: center;
-  padding-top: 4px;
-  color: var(--text-btn);
-  background-color: var(--primary);
-  border-radius: 5px;
-}
-header .navbar .part-two .login-btn:hover {
-  background-color: var(--btn-hover);
-}
 header .navbar .search {
   all: unset;
   width: 250px;
@@ -244,6 +243,32 @@ header .navbar .Portfolio-icon {
     display: none;
   }
 }
+.login-btn {
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  padding-top: 4px;
+  color: var(--text-btn);
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+.login-btn:hover {
+  background-color: var(--btn-hover);
+}
+
+.logout-btn {
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  padding-top: 4px;
+  color: var(--text-btn);
+  background-color: var(--primary);
+  border-radius: 5px;
+}
+.logout-btn:hover {
+  background-color: var(--btn-hover);
+}
+
 main {
   margin-top: 40px;
   height: 100%;
@@ -415,22 +440,30 @@ main {
   .all-crypto-container {
     padding: 0px;
   }
-  .header-last-seven-days, .last-seven-days, .header-circulating-supply, .circulating-supply {
+  .header-last-seven-days,
+  .last-seven-days,
+  .header-circulating-supply,
+  .circulating-supply {
     display: none;
   }
 }
 @media (max-width: 839px) {
-  .header-market-cap, .header-volume, .volume, .market-cap {
+  .header-market-cap,
+  .header-volume,
+  .volume,
+  .market-cap {
     display: none;
   }
 }
 @media (max-width: 556px) {
-  .header-seven-day, .seven-day-change {
+  .header-seven-day,
+  .seven-day-change {
     display: none;
   }
 }
 @media (max-width: 441px) {
-  .header-one-hour, .one-hour-change {
+  .header-one-hour,
+  .one-hour-change {
     display: none;
   }
 }

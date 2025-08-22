@@ -301,3 +301,5 @@ export function renderDataRow(data, index) {
 
   renderWeellyChart(data.sparkline_in_7d, index);
 }
+
+

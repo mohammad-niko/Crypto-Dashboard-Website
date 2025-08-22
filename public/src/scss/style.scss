@@ -3,8 +3,8 @@
 
 @use "./base/base";
 
-@use "./components/login";
-@use "./components/singup";
+@use "./pages/login";
+@use "./pages/singup";
 
 @use "./layout/header";
 @use "./layout/main";

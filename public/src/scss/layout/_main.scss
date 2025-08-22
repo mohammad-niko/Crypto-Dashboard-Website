@@ -166,29 +166,39 @@ main {
   vertical-align: middle;
 }
 
-
-@media (max-width:1108px){
-  .all-crypto-container{
+@media (max-width: 1108px) {
+  .all-crypto-container {
     padding: 0px;
   }
-  .header-last-seven-days,.last-seven-days,.header-circulating-supply,.circulating-supply{
+  .header-last-seven-days,
+  .last-seven-days,
+  .header-circulating-supply,
+  .circulating-supply {
     display: none;
   }
 }
 
-@media (max-width:839px){
-.header-market-cap,.header-volume,.volume,.market-cap{
+@media (max-width: 839px) {
+  .header-market-cap,
+  .header-volume,
+  .volume,
+  .market-cap {
     display: none;
   }
 }
 
-@media (max-width:556px){
-  .header-seven-day,.seven-day-change{
+@media (max-width: 556px) {
+  .header-seven-day,
+  .seven-day-change {
     display: none;
   }
 }
-@media (max-width:441px){
-.header-one-hour,.one-hour-change{
-  display: none;
+@media (max-width: 441px) {
+  .header-one-hour,
+  .one-hour-change {
+    display: none;
+  }
 }
-}
+
+
+

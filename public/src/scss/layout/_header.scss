@@ -2,7 +2,6 @@
 @use "../abstracts/variables" as *;
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 
-
 header {
   padding-top: 8px;
   @include flex-center(center, center);
@@ -53,18 +52,6 @@ header {
           color: gray;
         }
       }
-      .login-btn {
-        width: 60px;
-        height: 32px;
-        text-align: center;
-        padding-top: 4px;
-        color: var(--text-btn);
-        background-color: var(--primary);
-        border-radius: 5px;
-        &:hover {
-          background-color: var(--btn-hover);
-        }
-      }
     }
 
     .search {
@@ -109,5 +96,31 @@ header {
 @media (max-width: 600px) {
   .search-parent {
     display: none;
+  }
+}
+
+.login-btn {
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  padding-top: 4px;
+  color: var(--text-btn);
+  background-color: var(--primary);
+  border-radius: 5px;
+  &:hover {
+    background-color: var(--btn-hover);
+  }
+}
+
+.logout-btn {
+  width: 60px;
+  height: 32px;
+  text-align: center;
+  padding-top: 4px;
+  color: var(--text-btn);
+  background-color: var(--primary);
+  border-radius: 5px;
+  &:hover {
+    background-color: var(--btn-hover);
   }
 }

@@ -1,15 +1,28 @@
 import { renderSignUp } from "../ui/singupUi.js";
 import { renderLogin } from "../ui/loginUi.js";
+import { navigate } from "../router.js";
+import { auth, signOut } from "../firebase.js";
 
 const body = document.querySelector("body");
 
-//event Listener for Login btn in header:
-//styles in Login.scss.
-const loginBtn = document
-  .querySelector(".login-btn")
-  .addEventListener("click", renderLoginView);
+export function loginBtn() {
+  const parent = document.querySelector(".login-logout-btn");
+  const logout = document.querySelector(".logout-btn");
 
-export function renderLoginView() {
+  if (logout) logout.remove();
+
+  const element = document.createElement("div");
+  element.classList.add("login-btn");
+  element.textContent = "Login";
+  parent.appendChild(element);
+
+  //styles in Login.scss
+  element.addEventListener("click", () => {
+    navigate("login");
+  });
+}
+
+export function renderLoginSingupView() {
   const notAg = document.querySelector(".login-overlay");
   if (notAg) notAg.remove();
 
@@ -26,8 +39,14 @@ export function renderLoginView() {
   container.appendChild(deleteIcon);
 
   deleteIcon.addEventListener("click", () => {
-    container.remove();
-    overlay.remove();
+    container.classList.add("fade-out");
+    overlay.classList.add("fade-out");
+
+    setTimeout(() => {
+      container.remove();
+      overlay.remove();
+    }, 1000);
+    navigate("");
   });
 
   const logOrSin = document.createElement("div");
@@ -61,4 +80,24 @@ export function renderLoginView() {
   renderLogin();
 }
 
+export function logoutBtn() {
+  const parent = document.querySelector(".login-logout-btn");
+  const login = document.querySelector(".login-btn");
 
+  if (login) login.remove();
+
+  const element = document.createElement("div");
+  element.classList.add("logout-btn");
+  element.textContent = "Logout";
+  parent.appendChild(element);
+
+  element.addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      alert("You Log Out💔");
+    } catch (error) {
+      alert(error);
+      console.log(error);
+    }
+  });
+}

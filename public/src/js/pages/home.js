@@ -12,9 +12,10 @@ import {
   fetchAllCryptocurrencies,
 } from "../api/homeApi.js";
 import { renderBtcMarketCapChart } from "../chart.js";
+import { cleanMain } from "../ui/cleanMain.js";
 
 export async function renderHomeView() {
-
+  cleanMain();
   setIsHomeView(true);
   rendertrendingPart();
 

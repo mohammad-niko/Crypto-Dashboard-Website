@@ -1,10 +1,5 @@
-import { renderLogin } from "./loginUi.js";
-import {
-  auth,
-  createUserWithEmailAndPassword,
-} from "../firebase.js";
-
-
+import { navigate } from "../router.js";
+import { auth, createUserWithEmailAndPassword } from "../firebase.js";
 
 export function renderSignUp() {
   const containerOfInputs = document.querySelector(".container-of-inputs");
@@ -107,10 +102,10 @@ export function renderSignUp() {
 
   containerOfInputs.appendChild(form);
 
-
-
   emailInput.addEventListener("input", () => {
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+    const isValid = /^[a-zA-Z0-9._%+-]{6,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+      emailInput.value
+    );
     if (!isValid) {
       emailInput.classList.add("is-invalid");
       emailInput.classList.remove("is-valid");
@@ -121,7 +116,11 @@ export function renderSignUp() {
   });
 
   passwordInput.addEventListener("input", () => {
-    if (!passwordInput.value) {
+    const isPasswordValid =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(
+        passwordInput.value
+      );
+    if (!isPasswordValid) {
       passwordInput.classList.add("is-invalid");
       passwordInput.classList.remove("is-valid");
     } else {
@@ -143,14 +142,22 @@ export function renderSignUp() {
     e.preventDefault();
     errorDiv.textContent = "";
 
-    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-    const isPasswordValid = passwordInput.value.trim() !== "";
+    console.log("Form submitted"); // 1
+
+    const isEmailValid =
+      /^[a-zA-Z0-9._%+-]{6,}@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+        emailInput.value
+      );
+    const isPasswordValid =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/.test(
+        passwordInput.value
+      );
 
     if (!isEmailValid || !isPasswordValid) {
       if (!isEmailValid) emailInput.classList.add("is-invalid");
       if (!isPasswordValid) passwordInput.classList.add("is-invalid");
       form.classList.add("was-validated");
-      return;
+      return alert("error");
     }
 
     try {
@@ -161,14 +168,17 @@ export function renderSignUp() {
       );
 
       alert("Signup successful! Welcome, " + userCredential.user.email);
-      setTimeout(() => {
-        containerOfInputs.innerHTML = "";
-        renderLogin();
-      }, 1000);
+
+      const container = document.querySelector(".container-login-sinup");
+      container.remove();
+      const overlay = document.querySelector(".login-overlay");
+      overlay.remove();
+      if (!container && !overlay) navigate("");
+
+      console.log("User created:", userCredential);
     } catch (err) {
       errorDiv.textContent = err.code;
       console.error(err);
     }
   });
 }
-

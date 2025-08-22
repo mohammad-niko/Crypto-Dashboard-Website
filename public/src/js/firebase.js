@@ -3,7 +3,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,  
+  onAuthStateChanged,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -13,11 +14,16 @@ const firebaseConfig = {
   storageBucket: "crypto-view-2025.firebasestorage.app",
   messagingSenderId: "485757589453",
   appId: "1:485757589453:web:187ba8844826e2ed5e1684",
-  measurementId: "G-6HXEPM7RF1"
+  measurementId: "G-6HXEPM7RF1",
 };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged };
+export {
+  auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut
+};
