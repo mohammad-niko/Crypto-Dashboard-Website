@@ -12,9 +12,10 @@
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 10000;
 }
+
 .container-login-sinup {
   width: 600px;
-  height:450px;
+  height: 450px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -23,40 +24,44 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   z-index: 10001;
-  @include flex-center(start, center, column);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 
-  .delete-login-singup-page {
-    font-size: 2rem;
-    position: absolute;
-    right: 5px;
-    color: rgb(148, 147, 147);
-    cursor: pointer;
-  }
+.delete-login-singup-page {
+  font-size: 2rem;
+  position: absolute;
+  right: 5px;
+  color: rgb(148, 147, 147);
+  cursor: pointer;
+}
 
-  .log-or-sin {
-    @include flex-center(center, center);
-    gap: 20px;
-    padding: 25px;
-    width: 100%;
-    font-size: 1.7rem;
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    color: grey;
-  }
+.log-or-sin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 25px;
+  width: 100%;
+  font-size: 1.7rem;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  color: grey;
+}
 
-  .container-of-inputs {
-    padding-bottom: 20px;
-    width: 100%;
-    padding: 30px;
-    padding-top: 20px;
+.container-of-inputs {
+  padding: 30px;
+  padding-top: 20px;
+  width: 100%;
+}
 
-    .login-form {
-      display: flex;
-      justify-content: space-around;
-      flex-direction: column;
-      gap: 20px;
-    }
-  }
+.login-form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .google-icon {
@@ -88,8 +93,6 @@
   font-weight: 500;
 }
 
-
-
 .login-overlay,
 .container-login-sinup {
   opacity: 1;
@@ -99,4 +102,29 @@
 .login-overlay.fade-out,
 .container-login-sinup.fade-out {
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container-login-sinup {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .delete-login-singup-page {
+    font-size: 1.5rem;
+  }
+
+  .log-or-sin {
+    padding: 15px;
+    font-size: 1.4rem;
+    gap: 15px;
+  }
+
+  .container-of-inputs {
+    padding: 20px;
+    padding-top: 15px;
+  }
 }

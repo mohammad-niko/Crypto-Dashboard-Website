@@ -1,4 +1,3 @@
-import { navigate } from "../router.js";
 import { auth, createUserWithEmailAndPassword } from "../firebase.js";
 
 export function renderSignUp() {

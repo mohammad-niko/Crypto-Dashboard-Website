@@ -1,5 +1,5 @@
 import { auth, signInWithEmailAndPassword } from "../firebase.js";
-import { navigate } from "../router.js";
+
 
 export function renderLogin() {
   const containerOfInputs = document.querySelector(".container-of-inputs");

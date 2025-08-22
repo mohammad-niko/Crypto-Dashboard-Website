@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mohammad-niko/Crypto-Dashboard-Website#readme",
   "devDependencies": {
     "sass": "^1.90.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1"
   }
 }

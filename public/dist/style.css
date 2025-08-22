@@ -65,22 +65,23 @@ body {
   border-radius: 10px;
   z-index: 10001;
   display: flex;
-  justify-content: start;
   align-items: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
-.container-login-sinup .delete-login-singup-page {
+
+.delete-login-singup-page {
   font-size: 2rem;
   position: absolute;
   right: 5px;
   color: rgb(148, 147, 147);
   cursor: pointer;
 }
-.container-login-sinup .log-or-sin {
+
+.log-or-sin {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
+  justify-content: center;
   gap: 20px;
   padding: 25px;
   width: 100%;
@@ -89,13 +90,14 @@ body {
   font-optical-sizing: auto;
   color: grey;
 }
-.container-login-sinup .container-of-inputs {
-  padding-bottom: 20px;
-  width: 100%;
+
+.container-of-inputs {
   padding: 30px;
   padding-top: 20px;
+  width: 100%;
 }
-.container-login-sinup .container-of-inputs .login-form {
+
+.login-form {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -142,6 +144,27 @@ body {
   opacity: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .container-login-sinup {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .delete-login-singup-page {
+    font-size: 1.5rem;
+  }
+  .log-or-sin {
+    padding: 15px;
+    font-size: 1.4rem;
+    gap: 15px;
+  }
+  .container-of-inputs {
+    padding: 20px;
+    padding-top: 15px;
+  }
+}
 .signup-form {
   display: flex;
   justify-content: space-around;
